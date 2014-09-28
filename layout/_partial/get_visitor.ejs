@@ -1,0 +1,97 @@
+<% if (theme.extend_func.get_visitor){ %>
+<span class="getvisitor">
+	This blog has been visited <span class="focus-point" id="counterValue"></span> times.（powered by <a href="https://www.firebase.com/" target="_blank">firebase</a>）
+</span>
+<script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+<script>
+	function getsec(str) {
+		//这是有设定过期时间的使用示例：
+		//s20是代表20秒
+		//h是指小时，如12小时则是：h12
+		//d是天数，30天则：d30
+		var str1 = str.substring(1, str.length) * 1,
+			str2 = str.substring(0, 1);
+
+		if (str2 == "s") {
+			return str1 * 1000;
+		} else if (str2 == "h") {
+			return str1 * 60 * 60 * 1000;
+		} else if (str2 == "d") {
+			return str1 * 24 * 60 * 60 * 1000;
+		}
+	}
+
+	var cookieFn = {
+		name: 'isFireBaseAccessToday',
+		setCookieWithOneDay: function () {
+			var name = cookieFn.name;
+			var exp = (new Date()).getTime();
+			var Days = 1;
+
+			exp = (new Date(exp + Days * 24 * 60 * 60 * 1000)).getTime();
+			document.cookie = name + "=" + escape(exp);
+		},
+		getCookie: function getCookie() {
+			var name = cookieFn.name;
+			var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+
+			if (arr = document.cookie.match(reg)) {
+				return (arr[2]);
+			} else {
+				return null;
+			}
+		},
+		isExpires: function () {
+			var exp = cookieFn.getCookie(cookieFn.name);
+			var now = (new Date()).getTime();
+			if (!exp || now > exp) {
+				return true;
+			} else if (now < exp || now === exp) {
+				return false;
+			}
+
+		}
+
+	};
+
+	try {
+		var isExpires = cookieFn.isExpires(),
+			myRootRef = new Firebase('https://gejiawen-blog.firebaseio.com'),
+			countRef = myRootRef.child('count'),
+			countRefOnce,
+			iplistRefOnce,
+			countRefOnced,
+			iplistRefOnced;
+
+		countRef.once('value', function (snapshot) {
+			var nv = snapshot.val() + 1;
+
+			if (isExpires) {
+				countRefOnce = true;
+				if (iplistRefOnce && !iplistRefOnced) {
+					cookieFn.setCookieWithOneDay();
+					countRefOnced = true;
+				}
+				countRef.set(nv);
+			}
+			document.getElementById('counterValue').innerHTML = nv;
+		});
+
+		if (isExpires) {
+			var iplistRef = myRootRef.child('iplist');
+
+			iplistRef.once('value', function (snapshot) {
+				iplistRefOnce = true;
+				if (countRefOnce && !countRefOnced) {
+					cookieFn.setCookieWithOneDay();
+					iplistRefOnced = true;
+				}
+				iplistRef.push(ipdata);
+			});
+		}
+	} catch (e) {
+		console.log(e);
+	}
+</script>
+
+<% } %>

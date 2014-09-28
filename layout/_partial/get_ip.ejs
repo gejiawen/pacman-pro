@@ -1,0 +1,19 @@
+<% if (theme.extend_func.get_ip){ %>
+<span class="getipinfo">
+	Your IP is <span class="focus-point" id="ip"></span>
+</span>
+<script src="http://counter.sina.com.cn/ip/" charset="gb2312"></script>
+<script>
+	try {
+		if (window.ILData !== undefined) {
+			var ipdata = window.ILData,
+				ip = ipdata[0];
+
+			document.getElementById('ip').innerHTML = ip;
+		}
+	} catch (e) {
+		console.log(e);
+	}
+</script>
+
+<% } %>

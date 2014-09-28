@@ -1,6 +1,6 @@
 <div id="main">
 <% page.posts.each(function(item){ %>
-  <%- partial('_partial/article', {item: item, index: true,desc: true}) %>
+  <%- partial('_partial/article', {item: item, index: true, desc: true}) %>
 <% }); %>
 <% if (page.total > 1){ %>
   <nav id="page-nav" class="clearfix">
