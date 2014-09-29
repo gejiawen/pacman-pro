@@ -97,6 +97,7 @@ baidu_tongji:
 extend_func:
   get_ip: true
   get_visitor: true
+  archive_date_formate: YYYY年M月
 
 #### Custom Search
 google_cse:
