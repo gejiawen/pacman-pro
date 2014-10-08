@@ -63,7 +63,7 @@ fancybox: false
 author:
   google_plus: ## eg:116338260303228776998 for https://plus.google.com/u/0/116338260303228776998
   intro_line1: "I am a Web Front End Engineer work at baidu.com now." ## eg: "Hello ,I'm Larry Page in Google."
-  intro_line2: "Here is my personal blog, it will record my thinking of coding!" ## eg: "This is my blog,believe it or not."
+  intro_line2: "Here is my personal blog, it will record my thinking of coding and life!" ## eg: "This is my blog,believe it or not."
   weibo: gejiawen ## e.g. 436062867 for http://weibo.com/436062867
   twitter: ## e.g. yangjiansky for https://twitter.com/yangjiansky
   github: gejiawen ## e.g. A-limon for https://github.com/A-limon
