@@ -63,6 +63,9 @@
 			countRefOnced,
 			iplistRefOnced;
 
+		var ipdata = window.ILData,
+			data = ipdata.push((new Date()).toISOString());
+
 		countRef.once('value', function (snapshot) {
 			var nv = snapshot.val() + 1;
 
@@ -86,7 +89,7 @@
 					cookieFn.setCookieWithOneDay();
 					iplistRefOnced = true;
 				}
-				iplistRef.push(ipdata);
+				iplistRef.push(data);
 			});
 		}
 	} catch (e) {
