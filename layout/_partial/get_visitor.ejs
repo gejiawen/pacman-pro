@@ -86,8 +86,8 @@
 					cookieFn.setCookieWithOneDay();
 					iplistRefOnced = true;
 				}
-				var ipdata = window.ILData,
-					data = ipdata.push((new Date()).toISOString());
+				var data = window.ILData,
+					data.push((new Date()).toISOString());
 
 				iplistRef.push(data);
 			});
