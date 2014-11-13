@@ -78,7 +78,7 @@ $(document).ready(function(){
 });
 </script>
 <% } %>
-<% if ((page.layout=='post'||page.layout=='page')&&!theme.jiathis.enable) { %>
+<% if ((page.layout=='post'||page.layout=='page')) { %>
 <script type="text/javascript">
 $(document).ready(function(){
   var $this = $('.share'),
@@ -87,7 +87,9 @@ $(document).ready(function(){
       title = $this.attr('data-title'),
       tsina = $this.attr('data-tsina');
   var html = [
-  '<a href="#" class="article-back-to-top" title="Top"></a>'
+    '<a href="#" class="article-back-to-top" title="Top"></a>',
+    '<a href="http://service.weibo.com/share/share.php?title=' + title + '&url=' + encodedUrl + '&ralateUid=' + tsina + '&searchPic=true&style=number' + '" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+    '<span title="Share to"></span>'
   ].join('');
   $this.append(html);
   $('.article-share-qrcode').click(function(){
