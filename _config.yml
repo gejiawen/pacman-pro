@@ -98,6 +98,9 @@ google_analytics:
 baidu_tongji:
   enable: true
 
+qq_tongji:
+  enable: true
+
 extend_func:
   get_ip: true
   get_visitor: true
