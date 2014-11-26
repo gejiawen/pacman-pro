@@ -5,7 +5,7 @@ menu:
  ## Categories: /categories
  ## Tags: /tags
   Labs: /labs
-  Open: /open
+  Reading: /reading
   About: /about
 ## you can create `tags` and `categories` folders in `../source`.
 ## And create a `index.md` file in each of them.
