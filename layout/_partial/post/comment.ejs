@@ -1,5 +1,15 @@
 <% if (theme.duoshuo.enable && page.comments){ %>
 <section class="comment">
-	<div class="ds-thread"></div>
+    <div class="ds-thread"></div>
 </section>
 <% } %>
+<% if (theme.youyan.enable && page.comments){ %>
+<section class="comment">
+    <!-- UY BEGIN -->
+    <div id="uyan_frame"></div>
+    <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=1984696"></script>
+    <!-- UY END -->
+</section>
+<% } %>
+
+
