@@ -1,18 +1,18 @@
 <div id="main" class="<%= item.layout %>" itemscope itemprop="blogPost">
-	<article itemprop="articleBody"> 
+	<article itemprop="articleBody">
 		<%- partial('header') %>
 	<div class="article-content">
 		<%- partial('gallery') %>
 		<% if( table&&(item.toc !== false) && theme.toc.article){ %>
 		<div id="toc" class="toc-article">
 			<strong class="toc-title"><%= __('contents') %></strong>
-		<%- toc(item.content) %>
+		<%- toc(item.content, {list_number: false}) %>
 		</div>
 		<% } %>
-		<%- item.content %>  
+		<%- item.content %>
 	</div>
-		<%- partial('footer') %>   	       
+		<%- partial('footer') %>
 	</article>
 	<%- partial('pagination') %>
 	<%- partial('comment') %>
-</div>  
+</div>
