@@ -1,6 +1,6 @@
 <% if(theme.swift_search.enable) { %>
-<div id="container" class="page">
-    <div id="st-results-container" style="width:80%">正在加载搜索结果，请稍等......</div>
+<div id="container" class="page" id="main" style="margin-bottom: 2em;">
+    <div id="st-results-container">正在加载搜索结果，请稍等......</div>
     <style>
         .st-result-text {
             background: #fafafa;
@@ -34,6 +34,11 @@
             font-weight: bold;
             color: #ea6753;
         }
+
+        div.swiftype div.st-result-listing div.st-result {
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
     </style>
     <script type="text/javascript">
         (function (w, d, t, u, n, s, e) {
@@ -47,7 +52,7 @@
             s.src = u;
             e.parentNode.insertBefore(s, e);
         })(window, document, 'script', '//s.swiftypecdn.com/install/v1/st.js', '_st');
-        _st('install', 'auhSjJgvzA1Ct722dXyr');
+        _st('install', 'zgz_xrD7-dxNsLEKjG7G');
     </script>
 </div>
 <% } %>
