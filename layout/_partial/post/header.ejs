@@ -11,7 +11,7 @@
         <time datetime="<%= date_xml(item.date) %>" itemprop="datePublished"><%= item.date.format(config.date_format) %></time>
     </p>
 
-    <p class="article-author">By
+    <p class="article-author">
         <% if (theme.author.google_plus){ %>
         <a href="https://plus.google.com/<%- theme.author.google_plus %>?rel=author" title="<%= config.author %>" target="_blank" itemprop="author"><%= config.author %></a>
         <% } else if (theme.author.github){ %>
