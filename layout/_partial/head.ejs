@@ -14,9 +14,11 @@
       title += ': ' + page.year;
     }
   } else if (is_category()){
-    title = 'Category: ' + page.category;
+    //title = 'Category: ' + page.category;
+    title = 'Category';
   } else if (is_tag()){
-    title = 'Tag: ' + page.tag;
+    //title = 'Tag: ' + page.tag;
+    title = 'Tag';
   }
   %>
     <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>

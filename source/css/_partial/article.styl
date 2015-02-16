@@ -1,12 +1,13 @@
 .post,.page
   background color-section
   a
-    color color-blue 
+    color color-blue
     &:hover
       color color-theme
 
 article
   header.article-info
+    border-left 5px solid color-theme
     @media mini
       border-bottom 1px solid lighten(color-gray,30%)
     >h1
@@ -16,23 +17,22 @@ article
       @media tablet
         font-size font-size+100
         padding-top 0.3em
-      word-wrap break-word 
+      word-wrap break-word
       word-break normal
       font-smoothing antialiased
-      border-left 5px solid color-theme
     >p.article-author
-      padding 0.3em 4% 0.3em 0
+      padding-top 0.3em
       text-align right
       border-bottom 1px solid lighten(color-gray,30%)
       @media mini
-        float right
+        float left
         border-bottom none
     >p.article-time
-      padding-top 0.5em
+      padding 0.3em 0 0 3%
       font-size 0.8em
       text-align center
       @media mini
-        float right
+        float left
         margin-right 1em
         padding-top 0.1em
         font-size 0.9em
@@ -40,10 +40,10 @@ article
         font-family font-icon-family
         font-size font-size+30
         content "\f017"
-        font-smoothing()      
+        font-smoothing()
   .article-content
     padding 1.5em 4%
-    .kb      
+    .kb
       padding .1em .6em
       border 1px solid color-gray
       background-color code-color
@@ -67,7 +67,7 @@ article
       margin 0.5em 0
       >code
         color darken(color-gray,20%)
-    hr 
+    hr
       border 1px solid lighten(color-gray,30%)
     strong
       font-weight bold
@@ -127,7 +127,7 @@ article
       height auto
       vertical-align middle
       padding-top 0.5em
-      @media tablet 
+      @media tablet
         padding-top 0.7em
     figcaption,.caption
       text-align center
@@ -154,7 +154,7 @@ article
         font-weight bold
         border-bottom 3px solid lighten(color-gray,30%)
         padding-bottom 0.5em
-      td 
+      td
         border-bottom 1px solid lighten(color-gray,30%)
         padding 10px 0
     .pullquote

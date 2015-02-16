@@ -1,8 +1,8 @@
 <section class="<%= item.layout %>" itemscope itemprop="blogPost">
-  <% if (item.link) { %> 
-    <a href="<%- item.link %>" target="_blank"> 
+  <% if (item.link) { %>
+    <a href="<%- item.link %>" target="_blank" class="clearfix">
   <% } else{ %>
-    <a href="<%- config.root %><%- item.path %>" title="<%= item.title %>" itemprop="url">
+    <a href="<%- config.root %><%- item.path %>" title="<%= item.title %>" itemprop="url" class="clearfix">
   <% } %>
     <h1 itemprop="name"><%= item.title %></h1>
     <% if (desc){ %>

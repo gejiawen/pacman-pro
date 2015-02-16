@@ -2,7 +2,7 @@
 <% if( table && (item.toc !== false) && theme.toc.aside){ %>
 <div id="toc" class="toc-aside">
 	<strong class="toc-title"><%= __('contents') %></strong>
-	<%- toc(item.content) %>
+	<%- toc(item.content, {list_number: false}) %>
 </div>
 <% } %>
 <div id="asidepart">
