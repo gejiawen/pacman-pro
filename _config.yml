@@ -120,3 +120,6 @@ google_cse:
 ## title: search
 ## ---
 
+swift_search:
+  enable: true
+
