@@ -2,7 +2,7 @@
     <% if (item.tags && item.tags.length){ %>
     <div class="article-tags">
         <% var tags = [];
-            item.tags.forEach(function(tag){
+            item.tags.forEach(function (tag) {
                 tags.push('<a href="' + config.root + tag.path + '">' + tag.name + '</a>');
             }); %>
         <span></span> <%- tags.join('') %>
