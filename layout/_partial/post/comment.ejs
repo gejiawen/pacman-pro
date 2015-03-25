@@ -1,6 +1,6 @@
 <% if (theme.duoshuo.enable && page.comments){ %>
 <section class="comment">
-    <div class="ds-thread" data-thread-key="<%= page.layout %>-<%= page.slug %>" data-title="<%= page.title %>" data-url="<%= page.permalink %>" data-author-key="<%= config.author %>"></div>
+    <div class="ds-thread" data-thread-key="<%= page.path %>" data-title="<%= page.title %>" data-url="<%= page.permalink %>" data-author-key="<%= config.author %>"></div>
 </section>
 <% } %>
 <% if (theme.youyan.enable && page.comments){ %>
@@ -11,5 +11,3 @@
     <!-- UY END -->
 </section>
 <% } %>
-
-
